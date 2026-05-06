@@ -203,16 +203,6 @@ This is a **2-level hierarchy**:
 **What:** After each epoch, evaluate on the validation set.
 
 **Why:** Detects overfitting; determines when to stop training and save the best checkpoint.
-
-**How:**
-```python
-# After each epoch:
-# 1. Set model to eval mode
-# 2. Run forward pass on val set (no gradient computation)
-# 3. Compute L1 accuracy, L2 accuracy, macro-F1
-# 4. Save checkpoint if val_l2_f1 improves
-# 5. Implement early stopping (patience=3)
-```
 ---
 
 ### 3.10 Testing & Inference (src/inference.py)
