@@ -200,7 +200,7 @@ This is a **2-level hierarchy**:
 
 ---
 
-### 3.8 Training Procedure
+### 3.8 Model Training
 
 **What:** Fine-tune BERT with hierarchical loss.
 
@@ -208,7 +208,7 @@ This is a **2-level hierarchy**:
 
 ---
 
-### 3.9 Validation Strategy
+### 3.9 Model Validation
 
 **What:** After each epoch, evaluate on the validation set.
 
