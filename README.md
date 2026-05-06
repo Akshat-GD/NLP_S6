@@ -115,6 +115,7 @@ The AG News dataset, accessed via Hugging Face (wangrongsheng/ag_news), is a lar
 **What:** Load AG News from Hugging Face Hub.
 
 **Why:**  Standardized interface; handles caching and splits automatically.
+
 ---
 
 ### 3.2 Data Exploration (notebooks/01_eda.ipynb)
@@ -122,6 +123,7 @@ The AG News dataset, accessed via Hugging Face (wangrongsheng/ag_news), is a lar
 **What:** Understand distribution, text length, label semantics. 
 
 **Why:** Catches preprocessing issues early; confirms hierarchy is valid.
+
 ---
 
 ### 3.3 Text Preprocessing (src/dataset.py)
@@ -131,6 +133,7 @@ The AG News dataset, accessed via Hugging Face (wangrongsheng/ag_news), is a lar
 **Why:** BERT handles most noise natively, but cleaning improves consistency.
 
 **Design choice:** We use `bert-base-uncased`, so lowercasing is handled internally by the tokenizer. Avoid double-processing.
+
 ---
 
 ### 3.4 Tokenization (Transformer-Based) (src/dataset.py)
@@ -140,6 +143,7 @@ The AG News dataset, accessed via Hugging Face (wangrongsheng/ag_news), is a lar
 **Why:** BERT uses WordPiece (subword) tokenization — handles OOV words gracefully.
 
 **Max Length Justification:** AG News texts are short (avg ~40 tokens). Setting `max_length=128` covers 99%+ of samples while keeping memory overhead minimal. Using 512 would waste 4× the compute.
+
 ---
 
 ### 3.5 Hierarchy Construction Strategy (src/hierarchy.py)
@@ -174,6 +178,7 @@ This is a **2-level hierarchy**:
 **What:** Create L1 labels and define the parent-child mapping.
 
 **Why:** The model needs both L1 and L2 labels during training.
+
 ---
 
 ### 3.6 Train/Validation/Test Split (src/dataset.py)
@@ -181,6 +186,7 @@ This is a **2-level hierarchy**:
 **What:** Create reproducible splits.
 
 **Why:** We need a validation set to tune hyperparameters (the official test set should only be touched once).
+
 ---
 
 ### 3.7 Model Architecture Design
@@ -190,6 +196,7 @@ This is a **2-level hierarchy**:
 **Why:** The architecture must jointly learn L1 and L2 tasks, sharing the BERT backbone.
 
 *(See Section 4 for full architectural detail.)*
+
 ---
 
 ### 3.8 Training Procedure
@@ -197,6 +204,7 @@ This is a **2-level hierarchy**:
 **What:** Fine-tune BERT with hierarchical loss.
 
 **Why:** Pre-trained BERT has rich language understanding; fine-tuning adapts it to news classification.
+
 ---
 
 ### 3.9 Validation Strategy
@@ -204,6 +212,7 @@ This is a **2-level hierarchy**:
 **What:** After each epoch, evaluate on the validation set.
 
 **Why:** Detects overfitting; determines when to stop training and save the best checkpoint.
+
 ---
 
 ### 3.10 Testing & Inference (src/inference.py)
@@ -211,6 +220,7 @@ This is a **2-level hierarchy**:
 **What:** Evaluate on the held-out test set; build an inference function.
 
 **Why:** Final performance estimation on unseen data.
+
 ---
 
 ### 3.11 Error Analysis (In notebooks/03_results_analysis.ipynb)
@@ -218,6 +228,7 @@ This is a **2-level hierarchy**:
 **What:** Investigate where and why the model fails.
 
 **Why:** Directs targeted improvements rather than blind hyperparameter tuning.
+
 ---
 
 
