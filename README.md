@@ -105,6 +105,7 @@ Given input text `x`, predict:
 ## 2. Dataset Description
 
 The AG News dataset, accessed via Hugging Face (wangrongsheng/ag_news), is a large-scale benchmark corpus widely used for evaluating text classification models in the news domain. It contains 127,600 articles collected from over 2,000 news sources, partitioned into a training set of 120,000 samples and a test set of 7,600 samples. Each sample consists of a short text field formed by concatenating the article headline with a brief descriptive snippet, resulting in texts that average approximately 40 tokens in length. Articles are annotated with one of four mutually exclusive topic labels — World, Sports, Business, and Sci/Tech — each represented by exactly 30,000 training samples and 1,900 test samples, yielding a perfectly balanced class distribution across all splits. Crucially, the dataset provides only flat, single-level label annotations with no explicit hierarchical structure or parent-child relationships defined between categories, despite the intuitive semantic proximity that exists between certain topic pairs. This absence of hierarchical annotation makes the dataset a representative and challenging testbed for research into hierarchy induction and multi-level classification in the news domain.
+
 ---
 
 ## 3. END-TO-END PIPELINE DESCRIPTION
