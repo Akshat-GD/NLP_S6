@@ -148,7 +148,7 @@ The AG News dataset, accessed via Hugging Face (wangrongsheng/ag_news), is a lar
 
 ### 3.5 Hierarchy Construction Strategy (src/hierarchy.py)
 
-> Hierarchical Classification
+> Hierarchical Classification <br>
 There are two types of classifications:
 
 **Flat classification** assigns one label from a set: `{World, Business, Sports, Sci/Tech}`.
