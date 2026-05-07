@@ -354,7 +354,7 @@ The `[CLS]` token has no semantic meaning of its own. During pre-training on NSP
 ---
 
 
-## 5. PROJECT FOLDER STRUCTURE (Yet to be updated)
+## 5. PROJECT FOLDER STRUCTURE
 
 ```
 hierarchical_news_classifier/
