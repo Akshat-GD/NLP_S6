@@ -220,11 +220,11 @@ pd.DataFrame(test_dataset).to_csv(
 print("CSV files saved successfully.")
 
 # %%
-print(train_dataset[0])
-
-# %%
 for root, dirs, files in os.walk("data"):
     print(root)
+
+# %%
+print(train_dataset[0])
 
 # %%
 
