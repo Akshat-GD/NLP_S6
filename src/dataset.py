@@ -227,6 +227,3 @@ for root, dirs, files in os.walk("data"):
 print(train_dataset[0])
 
 # %%
-
-
-
