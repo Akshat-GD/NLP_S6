@@ -26,7 +26,7 @@ class Config:
     HEAD_LR: float = 1e-4       # New classification heads
     WEIGHT_DECAY: float = 0.01  # L2 regularisation via AdamW
     BATCH_SIZE: int = 32
-    NUM_EPOCHS: int = 8
+    NUM_EPOCHS: int = 2
     WARMUP_RATIO: float = 0.1   # 10 % of total steps used for LR warm-up
     GRAD_CLIP: float = 1.0      # Max gradient norm (prevents exploding grads)
     PATIENCE: int = 3           # Early stopping patience (epochs)
