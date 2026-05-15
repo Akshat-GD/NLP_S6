@@ -36,7 +36,7 @@ logger = logging.getLogger(__name__)
 
 def stage_setup() -> None:
     """Create directories, display config and hierarchy."""
-    logger.info("━━━━━━━━━━━━━━  STAGE: SETUP  ━━━━━━━━━━━━━━")
+    logger.info(" STAGE: SETUP")
     Config.ensure_dirs()
     Config.display()
     hierarchy_summary()
@@ -47,7 +47,7 @@ def stage_setup() -> None:
 
 def stage_data(reload: bool = False) -> None:
     """Download AG News, apply hierarchy labels, and save CSV splits."""
-    logger.info("━━━━━━━━━━━━━━  STAGE: DATA  ━━━━━━━━━━━━━━")
+    logger.info("STAGE: DATA")
 
     from src.dataset import (
         load_ag_news, create_splits, save_splits,
@@ -89,7 +89,7 @@ def stage_data(reload: bool = False) -> None:
 
 def stage_train(amp: bool = Config.USE_AMP) -> None:
     """Run the full training loop and save the best checkpoint."""
-    logger.info("━━━━━━━━━━━━━━  STAGE: TRAIN  ━━━━━━━━━━━━━━")
+    logger.info("STAGE: TRAIN")
 
     from src.train import train
     # Allow the caller to override AMP via CLI
@@ -102,7 +102,7 @@ def stage_train(amp: bool = Config.USE_AMP) -> None:
 
 def stage_evaluate() -> None:
     """Load best checkpoint, evaluate on test set, save confusion matrices."""
-    logger.info("━━━━━━━━━━━━━━  STAGE: EVALUATE  ━━━━━━━━━━━━━━")
+    logger.info("STAGE: EVALUATE")
 
     if not os.path.exists(Config.BEST_MODEL_PATH):
         logger.error(
@@ -141,7 +141,7 @@ def stage_evaluate() -> None:
 
 def stage_infer(texts=None) -> None:
     """Run inference on a list of sample texts."""
-    logger.info("━━━━━━━━━━━━━━  STAGE: INFERENCE  ━━━━━━━━━━━━━━")
+    logger.info("STAGE: INFERENCE")
 
     if not os.path.exists(Config.BEST_MODEL_PATH):
         logger.error(
@@ -167,6 +167,10 @@ def stage_infer(texts=None) -> None:
     print("\n" + "═" * 70)
     print("  HIERARCHICAL NEWS CLASSIFIER — Predictions")
     print("═" * 70)
+    
+    """print("\n" + "═" * 70)
+    print("  HIERARCHICAL NEWS CLASSIFIER — Predictions")
+    print("═" * 70)"""
     for text in texts:
         pred = predict(text, model, tokenizer)
         print(format_prediction(text, pred))
@@ -221,10 +225,15 @@ def main() -> None:
     use_amp = Config.USE_AMP and not args.no_amp
     stage = args.stage
 
-    logger.info("═" * 60)
+    logger.info("=" * 60)
     logger.info("  Hierarchical News Classification Pipeline")
     logger.info("  Stage: %s | Device: %s | AMP: %s", stage, Config.DEVICE, use_amp)
-    logger.info("═" * 60)
+    logger.info("=" * 60)
+    
+    """logger.info("═" * 60)
+    logger.info("  Hierarchical News Classification Pipeline")
+    logger.info("  Stage: %s | Device: %s | AMP: %s", stage, Config.DEVICE, use_amp)
+    logger.info("═" * 60)"""
 
     t0 = time.time()
 
