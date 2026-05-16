@@ -19,7 +19,7 @@ class Config:
     HEAD_LR               = 1e-4     # Higher LR for new classification heads
     WEIGHT_DECAY          = 0.01
     BATCH_SIZE            = 32
-    NUM_EPOCHS            = 8
+    NUM_EPOCHS            = 2
     WARMUP_RATIO          = 0.1
     GRAD_CLIP             = 1.0
     LABEL_SMOOTHING       = 0.1
