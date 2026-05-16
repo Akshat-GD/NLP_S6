@@ -359,11 +359,6 @@ The `[CLS]` token has no semantic meaning of its own. During pre-training on NSP
 ```
 hierarchical_news_classifier/
 │
-├── data/
-│   ├── raw/                        # Downloaded AG News files
-│   ├── processed/                  # Tokenized + label-mapped datasets
-│   └── splits/                     # train.csv, val.csv, test.csv
-│
 ├── src/
 │   ├── __init__.py
 │   ├── config.py                   # All hyperparameters and constants
@@ -381,7 +376,6 @@ hierarchical_news_classifier/
 │   └── 03_results_analysis.ipynb   # Confusion matrices, error analysis
 │
 ├── checkpoints/                    # Saved model weights (.pt files)
-├── logs/                           # TensorBoard / WandB logs
 ├── outputs/                        # Predictions, reports
 │
 ├── requirements.txt
