@@ -224,7 +224,7 @@ This is a **2-level hierarchy**:
 
 ---
 
-## 4. MODEL ARCHITECTURE (CORE SECTION)
+## 4. MODEL ARCHITECTURE
 
 ### 4.1 Architecture Choice: Fine-Tuned BERT with Dual Classification Heads
 
@@ -362,9 +362,8 @@ hierarchical_news_classifier/
 │   └── inference.py                # Predict on new text samples
 │
 ├── notebooks/
-│   ├── 01_eda.ipynb                # Exploratory Data Analysis
-│   ├── 02_preprocessing.ipynb      # Tokenization sanity checks
-│   └── 03_results_analysis.ipynb   # Confusion matrices, error analysis
+|   |
+|   └── 01_eda.ipynb                # Exploratory Data Analysis      
 │
 ├── checkpoints/                    # Saved model weights (.pt files)
 ├── outputs/                        # Predictions, reports
