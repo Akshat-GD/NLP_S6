@@ -7,12 +7,6 @@ from .config import Config
 class HierarchicalLoss(nn.Module):
     """
     Composite loss:  alpha*CE(L1) + beta*CE(L2) + gamma*KL_Consistency
-
-    Consistency term: KL-divergence between the L1 head's output and the
-    L1 distribution implied by summing L2 probabilities per parent group.
-      implied P(Hard) = P(World) + P(Business)   [L2 indices 0, 2]
-      implied P(Soft) = P(Sports) + P(Sci/Tech)  [L2 indices 1, 3]
-    The implied tensor is detached so gradients only update the L1 head.
     """
     def __init__(self):
         super().__init__()
