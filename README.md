@@ -224,15 +224,6 @@ This is a **2-level hierarchy**:
 
 ---
 
-"""### 3.11 Error Analysis (In notebooks/03_results_analysis.ipynb)
-
-**What:** Investigate where and why the model fails.
-
-**Why:** Directs targeted improvements rather than blind hyperparameter tuning.
-
----"""
-
-
 ## 4. MODEL ARCHITECTURE (CORE SECTION)
 
 ### 4.1 Architecture Choice: Fine-Tuned BERT with Dual Classification Heads
