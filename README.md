@@ -110,7 +110,7 @@ The AG News dataset, accessed via Hugging Face (wangrongsheng/ag_news), is a lar
 
 ## 3. END-TO-END PIPELINE DESCRIPTION
 
-### 3.1 Data Loading (src/dataset.py)
+### 3.1 Data Loading
 
 **What:** Load AG News from Hugging Face Hub.
 
@@ -118,7 +118,7 @@ The AG News dataset, accessed via Hugging Face (wangrongsheng/ag_news), is a lar
 
 ---
 
-### 3.2 Data Exploration (notebooks/01_eda.ipynb)
+### 3.2 Data Exploration
 
 **What:** Understand distribution, text length, label semantics. 
 
@@ -126,7 +126,7 @@ The AG News dataset, accessed via Hugging Face (wangrongsheng/ag_news), is a lar
 
 ---
 
-### 3.3 Text Preprocessing (src/dataset.py)
+### 3.3 Text Preprocessing
 
 **What:** Clean and normalize raw text before tokenization. 
 
@@ -136,7 +136,7 @@ The AG News dataset, accessed via Hugging Face (wangrongsheng/ag_news), is a lar
 
 ---
 
-### 3.4 Tokenization (Transformer-Based) (src/dataset.py)
+### 3.4 Tokenization (Transformer-Based)
 
 **What:** Convert text strings to BERT-compatible input tensors.
 
@@ -146,7 +146,7 @@ The AG News dataset, accessed via Hugging Face (wangrongsheng/ag_news), is a lar
 
 ---
 
-### 3.5 Hierarchy Construction Strategy (src/hierarchy.py)
+### 3.5 Hierarchy Construction Strategy
 
 > Hierarchical Classification
 
@@ -182,7 +182,7 @@ This is a **2-level hierarchy**:
 
 ---
 
-### 3.6 Train/Validation/Test Split (src/dataset.py)
+### 3.6 Train/Validation/Test Split
 
 **What:** Create reproducible splits.
 
@@ -216,7 +216,7 @@ This is a **2-level hierarchy**:
 
 ---
 
-### 3.10 Testing & Inference (src/inference.py)
+### 3.10 Testing & Inference
 
 **What:** Evaluate on the held-out test set; build an inference function.
 
@@ -234,7 +234,7 @@ We use **Multi-stage classifier** implemented as a single BERT model with two pa
 - Joint training of both heads via shared backbone captures cross-level dependencies
 - Well-supported by HuggingFace ecosystem
 
-### 4.2 Architecture Diagram (src/model.py)
+### 4.2 Architecture Diagram
 
 ```
 Input Text (string)
