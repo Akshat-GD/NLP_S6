@@ -28,7 +28,7 @@
                                          ▼
                          ┌──────────────────────────────┐
                          │  Text Preprocessing          │
-                         │  (clean → lowercase → trunc) │
+                         │  (clean → trunc)             │
                          └──────────────────────────────┘
                                          │
                                          ▼
