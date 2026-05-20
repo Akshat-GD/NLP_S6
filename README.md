@@ -344,8 +344,22 @@ The `[CLS]` token has no semantic meaning of its own. During pre-training on NSP
 4. Apply **consistency enforcement**: if the predicted L2 label is inconsistent with L1 (e.g., L1=Hard but L2=Sports), mask invalid L2 logits to −∞ and re-argmax
 ---
 
+## 5. Google Colab Notebooks
 
-## 5. PROJECT FOLDER STRUCTURE
+For demonstration purposes, two Google Colab notebooks have been provided: one for executing the complete project workflow and another for performing inference and model analysis using the trained weights. The notebooks are designed to be used after cloning the project repository from GitHub and setting up the required environment.
+
+Google Colab was selected for execution primarily because training the model locally was computationally expensive and time-consuming, whereas access to a T4 GPU in Colab significantly reduced the overall training time. The inference notebook loads the best-performing model weights stored in Google Drive; therefore, appropriate Drive access permissions are required for successful execution.
+
+### Notebook Links
+- Full Workflow Execution Notebook:
+https://colab.research.google.com/drive/1Cjp7dIeoxcEwVwoevJEWSc7-m7OmAfqv?usp=sharing
+
+- Inference and Model Analysis Notebook:
+https://colab.research.google.com/drive/1P66murCHfzhMolA8cOCSNUUaGi-dJ6ML?usp=sharing
+
+---
+
+## 6. PROJECT FOLDER STRUCTURE
 
 ```
 hierarchical_news_classifier/
